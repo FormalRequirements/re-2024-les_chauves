@@ -27,10 +27,10 @@ on:
         default: .asciidoc
 
 env:
-  SRC_DIR: ${{ inputs.src_dir || "in/" }}
-  DST_DIR: ${{ inputs.dst_dir || "out/" }}
-  BASE_FILENAME: ${{ inputs.base_filename || "pegs-bal3k" }}
-  EXTENSION: ${{ inputs.extension || ".asciidoc" }}
+  SRC_DIR: ${{ inputs.src_dir || 'in/' }}
+  DST_DIR: ${{ inputs.dst_dir || 'out/' }}
+  BASE_FILENAME: ${{ inputs.base_filename || 'pegs-bal3k' }}
+  EXTENSION: ${{ inputs.extension || '.asciidoc' }}
 
 jobs:
   adoc_build:
