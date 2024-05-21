@@ -1,0 +1,343 @@
+:title: Asciidoc Requirements Book Template
+:project: Project
+:version: 1.23.4
+:author: J.-M. Bruel
+:email: bruel@irit.fr
+:organization: IRIT/CNRS - University of Toulouse, France
+:icons: font
+:toc: macro
+//--------------------------- PDF version
+:doctype: book
+//:title-page-background-image: image::pegs.svg[pdfwidth=60%]
+// :title-logo-image: image::pegs.svg[top=1%, align=left, pdfwidth=2.5in]
+//:back-cover-image: image::pegs.svg[pdfwidth=160%]
+:method: pass:[<b>PEGS</b>]
+ifdef::pdf-backend[]
+:method: PEGS
+endif::[]
+
+= {title}
+{author},{email}
+{version} -- {localdate}
+
+//--------------------------- Glossary & Definitions
+// URLS
+:hb-url: https://se.inf.ethz.ch/requirements/
+:companionURL: https://formalrequirements.github.io/companionRequirements
+:HandbookPDF: https://link.springer.com/content/pdf/10.1007/978-3-031-06739-6.pdf
+:companionGit: https://github.com/FormalRequirements/requirements-handbook
+:handbook: link:{hb-url}[Handbook]
+:emptysec: icon:warning[] Nothing available at this point.
+
+// ICONS
+:check: icon:check-circle[]
+:nocheck: icon:times-circle[]
+:missing: icon:bug[]
+// GLOSSARY ENTRIES
+:Book: <<Book, Book>>
+:Catalog:  <<Catalog, Catalog>>
+// PERSONS ENTRIES
+:jmb: https://jmbruel.netlify.app[J.-M. Bruel]
+
+
+[NOTE]
+====
+This document follows the requirements book structure presented in the {HandbookPDF}[Handbook of requirements and business analysis].
+====
+
+*CHANGELOG*
+
+//----------------------------------------------
+[cols="1,1,3",,options="header"]
+|===
+| Version | Date | Comment 
+//----------------------------------------------
+| 1.0    | 2021-02-01 | Initial draft by {jmb}
+| 1.23   | 2023-01-28 | Updated by {jmb} after  publication of the {Handbook}
+| 1.23.1 | 2023-08-17 | Correct S.4 title, by {jmb} 
+| 1.23.2 | 2023-08-25 | Integrating the minimum principle, by {jmb} 
+| 1.23.3 | 2023-08-27 | Adding note for each chapters and reordering to be consistent with the {Handbook}, by {jmb} 
+| 1.23.4 | 2023-12-22 | Adding numbering options, by {jmb} 
+//| _{version}_ | _{localdate}_ | _Current PDF version, by {jmb}_
+|=== 
+//----------------------------------------------
+
+toc::[] 
+
+//------------------------------------
+// GOALS book
+//
+// Template for requirement:
+//---- Requirement
+//[[gx-keyword]] 
+//`{counter:gx}`
+// Requirement
+
+// {missing} [Corresponding Artifact]
+//---- 
+//------------------------------------
+
+== Goals
+
+[NOTE]
+====
+Goals are "needs of the target organization, which the system will address". 
+While the development team is the principal user of the other books, the Goals book addresses a wider audience: essentially, all stakeholders (see {Handbook}).
+
+It must contain enough information to provide â€” if read just by itself â€” a general sketch of the entire project. 
+To this effect, chapter G.3 presents a short overview of the system and <<G1,G.1>> will typically include some key properties of the environment. 
+As it addresses a wide readership, it should be clear and minimize the use of specialized technical terms. 
+Together, <<G1,G.1>>, <<G2,G.2>> and <<G3,G.3>> describe the rationale for the project. 
+It is important to state these justifications explicitly. 
+Typically, they are well understood at the start of the project, but management and priorities can change  (see {Handbook}).
+====
+
+[[G1]]
+=== G.1 Context and overall objectives
+
+NOTE: High-level view of the project: organizational context and reason for building a system (see {Handbook}).
+
+WARNING: This chapter should not be empty (following the _Minimum Requirements Outcome Principle_, p.27 of the {handbook}).
+
+//---- Requirement
+[[g1-exp1]]
+`{counter:g1}`
+Example of numbered requirement (see <<g1-exp2, another example>>).
+//---- 
+
+//---- Requirement
+[[g1-exp2]]
+`G.1.{counter:g1}`
+Another example of numbered requirement, more explicit in its numbering (see <<g1-exp1, another example>>).
+//---- 
+
+//---- Requirement
+[[g1-exp3]]
+^`G.1.{counter:g1}`^
+A third example of numbered requirement, with a less intrusive numbering style (the one adopted in the Companion book).
+//---- 
+
+[[G2]]
+=== G.2 Current situation
+
+NOTE: Current state of processes to be addressed by the project and the resulting system (see {Handbook}).
+
+
+Example of To Be Done action:
+
+//---- TBD: To Be Determined
+.TBD
+[%collapsible]
+====
+Author:: {jmb}
+Date:: 2023-08-24 
+Deadline:: 2023-12-24
+Importance:: serious
+//show-stopper / serious / desirable
+Needs:: 
+- [ ] stakeholders to ask
+- [ ] documentation to consider
+- [x] management decision (by {jmb})
+====
+
+[[G3]]
+=== G.3 Expected benefits 
+
+NOTE: New processes, or improvements to existing processes, made possible by the projectâ€™s results (see {Handbook}).
+
+WARNING: This chapter should not be empty (following the _Minimum Requirements Outcome Principle_, p.27 of the {handbook}).
+
+=== G.4 Functionality overview
+
+NOTE: Overview of the functions (behavior) of the system. Principal properties only (details are in the System book) (see {Handbook}).
+
+{emptysec}
+
+=== G.5 High-level usage scenarios 
+
+NOTE: Fundamental usage paths through the system (see {Handbook}).
+
+{emptysec}
+
+=== G.6 Limitations and exclusions 
+
+NOTE: Aspects that the system need not address (see {Handbook}).
+
+{emptysec}
+
+=== G.7 Stakeholders and requirements sources
+
+NOTE: Groups of people who can affect the project or be affected by it, and other places to consider for information about the project and system (see {Handbook}).
+
+WARNING: This chapter should not be empty (following the _Minimum Requirements Outcome Principle_, p.27 of the {handbook}).
+
+//------------------------------------
+// ENVIRONMENT book
+//
+// Template for requirement:
+//[[ex-keyword]] 
+//`{counter:environment}`
+// Requirement
+
+// {missing} [Corresponding Artifact]
+//------------------------------------
+== Environment
+
+NOTE: The Environment book describes the application domain and external context, physical or virtual (or a mix), in which the system will operate (see {Handbook}).
+
+=== E.1 Glossary
+
+NOTE: Clear and precise definitions of all the vocabulary specific to the application domain, including technical terms, words from ordinary language used in a special meaning, and acronyms (see {Handbook}).
+
+WARNING: This chapter should not be empty (following the Glossary Principle_, p.27 of the {handbook}).
+
+Example of terms definition.
+
+[[e1-terms]]
+==== `E.1.{counter:e1}` Terms
+
+[[Book]]
+{Book}:: Copy of a book with a copy number and an availability status.
+
+[[Catalog]]
+{Catalog}:: List of library <<Book,books>> and their instance availability.
+
+=== E.2 Components
+
+NOTE: List of elements of the environment that may affect or be affected by the system and project. Includes other systems to which the system must be interfaced (see {Handbook}).
+
+{emptysec}
+
+=== E.3 Constraints
+
+NOTE: Obligations and limits imposed on the project and system by the environment (see {Handbook}).
+
+WARNING: This chapter should not be empty (following the _Minimum Requirements Outcome Principle_, p.27 of the {handbook}).
+
+=== E.4 Assumptions
+
+NOTE: Properties of the environment that may be assumed, with the goal of facilitating the project and simplifying the system (see {Handbook}).
+
+{emptysec}
+
+=== E.5 Effects
+
+NOTE: Elements and properties of the environment that the system will affect (see {Handbook}).
+
+{emptysec}
+
+=== E.6 Invariants
+
+NOTE: Properties of the environment that the systemâ€™s operation must preserve (see {Handbook}).
+
+{emptysec}
+
+//------------------------------------
+// SYSTEM book
+//
+// Template for requirement:
+//---- Requirement
+//[[sx-keyword]] 
+//`{counter:sx}`
+// Requirement
+
+// {missing} [Corresponding Artifact]
+//---- 
+//------------------------------------
+
+== System
+
+NOTE: The System book refines the Goal one by focusing on more detailed requirements about the system under development, mainly its constituents, behaviors and properties.
+
+=== S.1 Components
+
+NOTE: Overall structure expressed by the list of major software and, if applicable, hardware parts (see {Handbook}).
+
+WARNING: This chapter should not be empty (following the _Minimum Requirements Outcome Principle_, p.27 of the {handbook}).
+
+=== S.2 Functionality
+
+NOTE: One section, S.2.n, for each of the components identified in S.1, describing the corresponding behaviors (functional and non-functional properties; see {Handbook}).
+
+WARNING: This chapter should not be empty (following the _Minimum Requirements Outcome Principle_, p.27 of the {handbook}).
+
+=== S.3 Interfaces
+
+NOTE: How the system makes the functionality of S.2 available to the rest of the world, particularly user interfaces and program interfaces (APIs) (see {Handbook}).
+
+{emptysec}
+
+=== S.4 Detailed usage scenarios
+
+NOTE: Examples of interaction between the environment (or human users) and the system: use cases, user stories (see {Handbook}).
+
+{emptysec}
+
+=== S.5 Prioritization
+
+NOTE: Classification of the behaviors, interfaces and scenarios (S.2, S.3 and S.4) by their degree of criticality (see {Handbook}).
+
+{emptysec}
+
+=== S.6 Verification and acceptance criteria
+
+NOTE: Specification of the conditions under which an implementation will be deemed satisfactory (see {Handbook}).
+
+{emptysec}
+
+//------------------------------------
+// PROJECT book
+//
+// Template for requirement:
+//[[ex-keyword]] 
+//`{counter:project}`
+// Requirement
+
+// {missing} [Corresponding Artifact]
+//------------------------------------
+== Project
+
+NOTE: The Project book describes all the constraints and expectations not about the system itself, but about how to develop and produce it.
+
+=== P.1 Roles and personnel
+
+NOTE: Main responsibilities in the project; required project staff and their needed qualifications (see {Handbook}).
+
+{emptysec}
+
+=== P.2 Imposed technical choices
+
+NOTE: Any a priori choices binding the project to specific tools, hardware, languages or other technical parameters (see {Handbook}).
+
+{emptysec}
+
+=== P.3 Schedule and milestones
+
+NOTE: List of tasks to be carried out and their scheduling (see {Handbook}).
+
+WARNING: This chapter should not be empty (following the _Minimum Requirements Outcome Principle_, p.27 of the {handbook}).
+
+=== P.4 Tasks and deliverables
+
+NOTE: Details of individual tasks listed under P.3 and their expected outcomes (see {Handbook}).
+
+WARNING: This chapter should not be empty (following the _Minimum Requirements Outcome Principle_, p.27 of the {handbook}).
+
+=== P.5 Required technology elements
+
+NOTE: External systems, hardware and software, expected to be necessary for building the system (see {Handbook}).
+
+{emptysec}
+
+=== P.6 Risk and mitigation analysis
+
+NOTE: Potential obstacles to meeting the schedule of P.4, and measures for adapting the plan if they do arise (see {Handbook}).
+
+{emptysec}
+
+=== P.7 Requirements process and report
+
+NOTE: Initially, description of what the requirements process will be; later, report on its steps (see {Handbook}).
+
+{emptysec}
+
