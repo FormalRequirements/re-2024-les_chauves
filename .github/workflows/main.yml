@@ -43,7 +43,7 @@ jobs:
       id: adocbuild
       uses: tonynv/asciidoctor-action@master
       with:
-          program: "asciidoctor ${{ SRC_DIR }}/${{ BASE_FILENAME }}${{ EXTENSION }} -o ${{ DST_DIR}}/index.html"
+          program: "asciidoctor ${{ env.SRC_DIR }}/${{ env.BASE_FILENAME }}${{ env.EXTENSION }} -o ${{ env.DST_DIR }}/index.html"
     - name: Print execution time
       run: echo "Time ${{ steps.adocbuild.outputs.time }}"
     - name: Deploy docs to ghpages
