@@ -1,0 +1,54 @@
+name: build adocs
+
+on:
+  push:
+    branches:
+    - main
+  workflow_dispatch:
+    inputs:
+      src_dir:
+        type: string
+        description: Source directory
+        default: "in/"
+      dst_dir:
+        type: string
+        description: Destination directory
+        default: "out/"
+      base_filename:
+        type: string
+        description: Filename without extension
+        default: "pegs-bal3k"
+      extension:
+        type: choice
+        description: Asciidoc extension
+        options:
+          - .asciidoc
+          - .adoc
+        default: .asciidoc
+
+env:
+  SRC_DIR: ${{ inputs.src_dir || "in/" }}
+  DST_DIR: ${{ inputs.dst_dir || "out/" }}
+  BASE_FILENAME: ${{ inputs.base_filename || "pegs-bal3k" }}
+  EXTENSION: ${{ inputs.extension || ".asciidoc" }}
+
+jobs:
+  adoc_build:
+    runs-on: ubuntu-18.04
+    name: asciidoctor -D <src_dir> -o <dst_dir>/index.html 
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Get build container
+      id: adocbuild
+      uses: tonynv/asciidoctor-action@master
+      with:
+          program: "asciidoctor ${{ SRC_DIR }}/${{ BASE_FILENAME }}${{ EXTENSION }} -o ${{ DST_DIR}}/index.html"
+    - name: Print execution time
+      run: echo "Time ${{ steps.adocbuild.outputs.time }}"
+    - name: Deploy docs to ghpages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        publish_branch: gh-pages
+        publish_dir: ./out/
