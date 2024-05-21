@@ -16,6 +16,9 @@ EXT=".html"
 FILES="$(ls ./in)"
 PARENT_DIR="$(cd ../ | pwd)"
 
+# Create out folder if not exists
+mkdir -p $PARENT_DIR/out/
+
 for FILE in $FILES
 do
   BASENAME="$(basename $PARENT_DIR/in/$FILE .asciidoc)"
