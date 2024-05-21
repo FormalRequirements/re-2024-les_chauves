@@ -34,7 +34,7 @@ env:
 
 jobs:
   adoc_build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     name: asciidoctor -D <src_dir> -o <dst_dir>/index.html 
     steps:
     - name: Checkout code
